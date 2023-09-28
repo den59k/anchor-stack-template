@@ -1,0 +1,39 @@
+
+$sides: ("l": "left", "r": "right", "t": "top", "b": "bottom")
+$spacing: 4px
+
+.mx-auto
+  margin-left: auto !important
+  margin-right: auto !important
+
+@each $n, $side in $sides
+  .m#{$n}-auto
+    margin-#{$side}: auto !important
+  @for $i from 0 through 10
+    .m#{$n}-#{$i}
+      margin-#{$side}: $spacing * $i !important
+
+    .m#{$n}-n#{$i}
+      margin-#{$side}: -$spacing * $i !important
+
+    .p#{$n}-#{$i}
+      padding-#{$side}: $spacing * $i !important
+
+@for $i from 0 through 10
+  .my-#{$i}
+    margin-top: $spacing * $i !important
+    margin-bottom: $spacing * $i !important
+  .mx-#{$i}
+    margin-left: $spacing * $i !important
+    margin-right: $spacing * $i !important
+
+  .py-#{$i}
+    padding-top: $spacing * $i !important
+    padding-bottom: $spacing * $i !important
+  .px-#{$i}
+    padding-left: $spacing * $i !important
+    padding-right: $spacing * $i !important
+
+  .gap-#{$i}
+    display: flex
+    gap: $spacing * $i !important

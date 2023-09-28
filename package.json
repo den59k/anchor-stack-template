@@ -1,0 +1,47 @@
+{
+  "name": "anchor-stack",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node --enable-source-maps scripts/run.js",
+    "test": "vitest",
+    "build:frontend": "vite build -c vite.frontend.config.ts",
+    "build:backend": "vite build -c vite.backend.config.ts",
+    "collect": "node scripts/registerComponents.js",
+    "generate:doc": "ts-node --project tsconfig.json scripts/analyze.ts",
+    "init:db": "ts-node scripts/init.ts"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.197",
+    "@types/node": "^20.4.5",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vueuse/core": "^10.2.1",
+    "dayjs": "^1.11.9",
+    "pinia": "^2.1.6",
+    "prisma": "^5.3.1",
+    "sass": "^1.64.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vitest": "^0.33.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "vue-tsc": "^1.8.8"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^8.3.0",
+    "@fastify/multipart": "^7.7.3",
+    "@fastify/static": "^6.10.2",
+    "@prisma/client": "^5.3.1",
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.21.0",
+    "fastify-plugin": "^4.5.1",
+    "lodash": "^4.17.21",
+    "uid": "^2.0.2"
+  },
+  "prisma": {
+    "schema": "src/backend/prisma/schema.prisma"
+  }
+}

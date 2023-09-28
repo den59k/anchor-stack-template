@@ -1,0 +1,20 @@
+export const errors = {
+  "wrongFormat": "Неверный формат",
+  "auth.phoneWrongFormat": "Неверный формат телефона",
+  "auth.phoneAlreadyTaken": "Номер телефона уже занят",
+  "auth.emailWrongFormat": "Неверный формат E-mail",
+  "auth.emailAlreadyTaken": "E-mail уже занят",
+  "auth.passwordLengthIsTooSmall": "Пароль слишком короткий",
+  "auth.passwordMustContainerLetters": "Пароль должен содержать минимум 1 букву",
+  "auth.passwordMustContainNumbers": "Пароль должен содержать минимум 1 цифру",
+  "auth.wrongLogin": "Неверный логин",
+  "auth.wrongPassword": "Неверный пароль",
+  "auth.wrongConfirmCode": "Неверный код подверждения",
+  "auth.emailNotFound": "Аккаунт с данным e-mail не существует",
+  "required": "Поле должно быть заполнено",
+  "busy": "Значение занято",
+  "tooShort": "Слишком короткое значение",
+  "publicUrlReserved": "Данный URL является системным",
+  "publicUrlBusy": "Данный URL уже занят",
+  "invalidPublicUrl": "URL может содержать A-z, 0-9, - и _"
+}
