@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node --enable-source-maps scripts/run.js",
     "test": "vitest",
-    "build:frontend": "vite build -c vite.frontend.config.ts",
+    "build:frontend": "vite build -c vite.frontend.config.ts --base=/admin",
     "build:backend": "vite build -c vite.backend.config.ts",
     "collect": "node scripts/registerComponents.js",
     "generate:doc": "ts-node --project tsconfig.json scripts/analyze.ts",
