@@ -6,12 +6,11 @@ export default fp(async (fastify: FastifyInstance) => {
   function sendError(this: FastifyReply, payload: any, code: number = 400) {
     this.code(code).send({ error: payload })  
   }
-  fastify.decorateReply("error", sendError as any)
-  
+
   // It is fast reply error 
   fastify.setErrorHandler((error, _request, reply) => {
     if (error.code === "P2002") {
-      reply.error("Already exists", 409)
+      reply.code(409).send("Already exists")
       return
     }
     if (error instanceof HTTPError) {

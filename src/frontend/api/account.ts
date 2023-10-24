@@ -4,9 +4,9 @@ type Credentials = { login: string, password: string }
 
 export const accountApi = {
   login(values: Credentials) {
-    return request("/api/account/login", values)
+    return request("/api/admin/login", values)
   },
   getUserInfo() {
-    return request("/api/account")
+    return request("/api/admin/account")
   }
 }

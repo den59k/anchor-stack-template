@@ -7,7 +7,7 @@ generator client {
   provider        = "prisma-client-js"
 }
 
-model User {
+model AdminUser {
   id                Int                 @id @default(autoincrement())
   createdAt         DateTime            @default(now())
   login             String              @unique

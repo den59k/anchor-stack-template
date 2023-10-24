@@ -5,11 +5,12 @@ const init = async () => {
   const prisma = new PrismaClient()
   await prisma.$connect()
 
-  const password = await generateHash("123123")
-  const user = await prisma.user.upsert({
-    where: { login: "root" },
-    update: { login: "root", password },
-    create: { login: "root", password }
+  const login = process.env.ROOT_LOGIN || "root"
+  const password = await generateHash(process.env.ROOT_PASSWORD || "123123")
+  const user = await prisma.adminUser.upsert({
+    where: { login },
+    update: { login, password },
+    create: { login, password }
   })
   console.info (`User ${user.login} successfull created!`)
 }

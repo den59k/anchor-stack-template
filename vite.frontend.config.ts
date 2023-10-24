@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     port: 7000,
     proxy: {
-      "^/api/(?!.*[.]ts$).*$": "http://localhost:3001",
+      "^/api/(?!.*[.]ts).*$": "http://localhost:3001",
       "/images": "http://localhost:3001",
       "/s3": "http://localhost:3001",
       "/ar-assets": "http://localhost:3001",

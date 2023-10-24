@@ -24,7 +24,7 @@ export const useAccountStore = defineStore('account', () => {
       currentUser.value = await accountApi.getUserInfo()
       status.value = "authorized"
     } catch(e) {
-      if (e instanceof HTTPError && e.statusCode === 401) {
+      if (e instanceof HTTPError && e.statusCode === 403) {
         status.value = "not-authorized"
         router.push("/auth")
       }
