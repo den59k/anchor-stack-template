@@ -1,5 +1,7 @@
 import { PrismaClient } from '@prisma/client'
 import { generateHash } from "../src/backend/utils/passwordHash"
+import dotenv from 'dotenv'
+dotenv.config()
 
 const init = async () => {
   const prisma = new PrismaClient()

@@ -1,7 +1,10 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import viteSvgPlugin from './scripts/viteSvgPlugin'
+
+const env = loadEnv("mock", process.cwd(), "");
+const server = env.PROXY || "http://127.0.0.1:3001";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,10 +13,10 @@ export default defineConfig({
   server: {
     port: 7000,
     proxy: {
-      "^/api/(?!.*[.]ts).*$": "http://localhost:3001",
-      "/images": "http://localhost:3001",
-      "/s3": "http://localhost:3001",
-      "/ar-assets": "http://localhost:3001",
+      "^/api/(?!.*[.]ts).*$": server,
+      "/images": server,
+      "/s3": server,
+      "/ar-assets": server,
     }
   },
   build: {

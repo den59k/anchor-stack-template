@@ -9,8 +9,8 @@
     "build:frontend": "vite build -c vite.frontend.config.ts --base=/admin",
     "build:backend": "vite build -c vite.backend.config.ts",
     "collect": "node scripts/registerComponents.js",
-    "generate:doc": "ts-node --project tsconfig.json scripts/analyze.ts",
-    "init:db": "ts-node scripts/init.ts"
+    "generate:doc": "node --loader ts-node/esm scripts/analyze.ts",
+    "init:db": "node --loader ts-node/esm scripts/init.ts"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.197",
