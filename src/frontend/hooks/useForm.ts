@@ -6,11 +6,13 @@ type Options<T> = {
   required?: Array<keyof T>
 }
 
+type Error = { code?: string, message?: string }
+
 export const useForm = <T extends Record<string, any>>(defaultValues: T, options: Options<T> = {}) => {
 
   const pending = ref(false)
-  const values = reactive(cloneDeep(defaultValues))
-  const errors = reactive<Partial<Record<keyof T, { code?: string, message?: string }>>>({})
+  const values = reactive(cloneDeep(defaultValues)) as T
+  const errors = reactive<Partial<Record<keyof T, Error>>>({}) as Partial<Record<keyof T, Error>>
 
   const oldValues: { [key: string]: string } = {}
   watch(values, () => {
@@ -26,7 +28,7 @@ export const useForm = <T extends Record<string, any>>(defaultValues: T, options
     return new Set(options.required)
   })
 
-  const setError = (key: keyof T, error: { code?: string, message?: string }) => {
+  const setError = (key: keyof T, error: Error) => {
     (errors as any)[key] = error
   }
 

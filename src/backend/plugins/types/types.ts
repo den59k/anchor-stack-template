@@ -1,9 +1,9 @@
-import { User } from "@prisma/client"
+import { AdminUser } from "@prisma/client"
 import fp from "fastify-plugin"
 
 declare module 'fastify' {
   interface FastifyRequest {
-    currentUser: Pick<User, "id">
+    currentUser: Pick<AdminUser, "id">
   }
 }
 
